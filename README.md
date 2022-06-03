@@ -1,2 +1,3 @@
 # music-and-movies-lit
-An app example built with Lit from scratch
+
+A Lit version of the original [music-and-movies](https://github.com/jgustavoas/music-and-movies) app.
