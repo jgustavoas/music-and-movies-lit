@@ -22,7 +22,7 @@ module.exports = {
         type: Sequelize.INTEGER,
       },
       movie_id: {
-        type: Sequelize.ARRAY,
+        type: Sequelize.ARRAY(Sequelize.INTEGER),
       },
       created_at: {
         allowNull: false,
