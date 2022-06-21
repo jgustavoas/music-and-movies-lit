@@ -29,7 +29,12 @@ module.exports = {
           updated_at: new Date(),
         },
         {
-          genre: 'Alternative & Punk',
+          genre: 'Alternative Rock',
+          created_at: new Date(),
+          updated_at: new Date(),
+        },
+        {
+          genre: 'Punk Rock',
           created_at: new Date(),
           updated_at: new Date(),
         },
@@ -79,7 +84,17 @@ module.exports = {
           updated_at: new Date(),
         },
         {
-          genre: 'R&B/Soul',
+          genre: 'Rhythm and Blues',
+          created_at: new Date(),
+          updated_at: new Date(),
+        },
+        {
+          genre: 'Soul',
+          created_at: new Date(),
+          updated_at: new Date(),
+        },
+        {
+          genre: 'Funk',
           created_at: new Date(),
           updated_at: new Date(),
         },
@@ -94,12 +109,17 @@ module.exports = {
           updated_at: new Date(),
         },
         {
-          genre: 'Hip Hop/Rap',
+          genre: 'Hip Hop',
           created_at: new Date(),
           updated_at: new Date(),
         },
         {
-          genre: 'Science Fiction',
+          genre: 'Rap',
+          created_at: new Date(),
+          updated_at: new Date(),
+        },
+        {
+          genre: 'Musical',
           created_at: new Date(),
           updated_at: new Date(),
         },
@@ -109,7 +129,12 @@ module.exports = {
           updated_at: new Date(),
         },
         {
-          genre: 'Sci Fi & Fantasy',
+          genre: 'Sci-Fi',
+          created_at: new Date(),
+          updated_at: new Date(),
+        },
+        {
+          genre: 'Fantasy',
           created_at: new Date(),
           updated_at: new Date(),
         },
@@ -139,7 +164,7 @@ module.exports = {
           updated_at: new Date(),
         },
         {
-          genre: 'Funk',
+          genre: 'Axé',
           created_at: new Date(),
           updated_at: new Date(),
         },
@@ -150,6 +175,16 @@ module.exports = {
         },
         {
           genre: 'MPB',
+          created_at: new Date(),
+          updated_at: new Date(),
+        },
+        {
+          genre: 'Pagode',
+          created_at: new Date(),
+          updated_at: new Date(),
+        },
+        {
+          genre: 'Samba',
           created_at: new Date(),
           updated_at: new Date(),
         },
