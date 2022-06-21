@@ -138,6 +138,21 @@ module.exports = {
           created_at: new Date(),
           updated_at: new Date(),
         },
+        {
+          genre: 'Funk',
+          created_at: new Date(),
+          updated_at: new Date(),
+        },
+        {
+          genre: 'Forró',
+          created_at: new Date(),
+          updated_at: new Date(),
+        },
+        {
+          genre: 'MPB',
+          created_at: new Date(),
+          updated_at: new Date(),
+        },
       ],
       {}
     );
