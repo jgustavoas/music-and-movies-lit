@@ -5,7 +5,8 @@
     "password": "docker",
     "database": "music_and_movies_dev",
     "host": "localhost",
-    "dialect": "postgres"
+    "dialect": "postgres",
+    "seederStorage": "sequelize"
   },
   "test": {
     "port": 5434,
@@ -13,7 +14,8 @@
     "password": "docker",
     "database": "music_and_movies_test",
     "host": "localhost",
-    "dialect": "postgres"
+    "dialect": "postgres",
+    "seederStorage": "sequelize"
   },
   "production": {
     "port": 5434,
@@ -21,6 +23,7 @@
     "password": "docker",
     "database": "music_and_movies_pro",
     "host": "localhost",
-    "dialect": "postgres"
+    "dialect": "postgres",
+    "seederStorage": "sequelize"
   }
 }
