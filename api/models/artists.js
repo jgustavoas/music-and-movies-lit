@@ -23,6 +23,8 @@ module.exports = (sequelize, DataTypes) => {
     {
       sequelize,
       modelName: 'artists',
+      underscored: true,
+      // https://sequelize.org/docs/v6/other-topics/naming-strategies/#the-underscored-option
     }
   );
   return artists;
