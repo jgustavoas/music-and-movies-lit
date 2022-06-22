@@ -27,7 +27,7 @@ module.exports = (sequelize, DataTypes) => {
       album_id: DataTypes.INTEGER,
       artist_id: DataTypes.INTEGER,
       genre_id: DataTypes.INTEGER,
-      movie_id: DataTypes.ARRAY,
+      movie_id: DataTypes.ARRAY(DataTypes.INTEGER),
     },
     {
       sequelize,
