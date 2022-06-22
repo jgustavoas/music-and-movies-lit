@@ -140,7 +140,7 @@ module.exports = {
           updated_at: new Date(),
         },
         {
-          artist: 'Demônio da Garoa',
+          artist: 'Demônios da Garoa',
           genre_id: 35,
           created_at: new Date(),
           updated_at: new Date(),
