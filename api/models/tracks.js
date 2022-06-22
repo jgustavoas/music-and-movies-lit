@@ -10,13 +10,13 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
-      models.tracks.belongsTo(models.albums, {
+      this.belongsTo(models.albums, {
         foreignKey: 'album_id',
       });
-      models.tracks.belongsTo(models.artists, {
+      this.belongsTo(models.artists, {
         foreignKey: 'artist_id',
       });
-      models.tracks.belongsTo(models.genres, {
+      this.belongsTo(models.genres, {
         foreignKey: 'genre_id',
       });
     }
