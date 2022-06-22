@@ -16,6 +16,7 @@ router.get('/artists', async (req, res, next) => {
   try {
     const data = await models.artists.findAll({
       attributes: ['id', 'artist', 'genre_id', 'created_at', 'updated_at'],
+      include: { model: models.genres, attributes: ['genre'] },
     });
     res.json(data);
   } catch (error) {
