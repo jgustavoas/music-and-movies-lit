@@ -1,5 +1,5 @@
 const express = require('express');
-const models = require('../models');
+const Controller = require('../controllers/Universal');
 
 const router = express.Router();
 
@@ -12,16 +12,6 @@ router.get('/', (req, res, next) => {
 });
 
 /* models page */
-router.get('/artists', async (req, res, next) => {
-  try {
-    const data = await models.artists.findAll({
-      attributes: ['id', 'artist', 'genre_id', 'created_at', 'updated_at'],
-      include: { model: models.genres, attributes: ['genre'] },
-    });
-    res.json(data);
-  } catch (error) {
-    res.status(400).json(error);
-  }
-});
+router.get('/:MODEL', Controller.read);
 
 module.exports = router;
