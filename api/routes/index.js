@@ -1,5 +1,5 @@
 const express = require('express');
-const Controller = require('../controllers/Universal');
+const { read } = require('../controllers/Universal');
 
 const router = express.Router();
 
@@ -12,6 +12,6 @@ router.get('/', (req, res, next) => {
 });
 
 /* models page */
-router.get('/:MODEL', Controller.read);
+router.get('/:MODEL', read);
 
 module.exports = router;
