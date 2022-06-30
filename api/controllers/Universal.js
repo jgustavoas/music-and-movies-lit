@@ -24,6 +24,18 @@ class Controller {
       res.status(400).json(error);
     }
   }
+
+  async update(req, res, next) {
+    try {
+      const { MODEL, ID } = req.params;
+      const where = { id: +ID };
+      const data = await models[MODEL].update(req.body.data, { where });
+
+      res.json(data);
+    } catch (error) {
+      res.status(400).json(error);
+    }
+  }
 }
 
 module.exports = new Controller();

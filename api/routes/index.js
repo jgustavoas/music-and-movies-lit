@@ -1,5 +1,5 @@
 const express = require('express');
-const { create, read } = require('../controllers/Universal');
+const { create, read, update } = require('../controllers/Universal');
 
 const router = express.Router();
 
@@ -14,5 +14,6 @@ router.get('/', (req, res, next) => {
 /* models page */
 router.post('/:MODEL', create);
 router.get('/:MODEL', read);
+router.patch('/:MODEL/:ID', update);
 
 module.exports = router;
