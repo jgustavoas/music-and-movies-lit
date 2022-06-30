@@ -41,7 +41,7 @@ class Controller {
     try {
       const { MODEL, ID } = req.params;
       const where = { id: +ID };
-      const data = await models[MODEL].update({ where });
+      const data = await models[MODEL].destroy({ where });
 
       res.json(data);
     } catch (error) {
