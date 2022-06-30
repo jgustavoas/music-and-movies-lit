@@ -1,5 +1,5 @@
 const express = require('express');
-const { create, read, update } = require('../controllers/Universal');
+const { Create, Read, Update, Delete } = require('../controllers/Universal');
 
 const router = express.Router();
 
@@ -12,8 +12,9 @@ router.get('/', (req, res, next) => {
 });
 
 /* models page */
-router.post('/:MODEL', create);
-router.get('/:MODEL', read);
-router.patch('/:MODEL/:ID', update);
+router.post('/:MODEL', Create);
+router.get('/:MODEL', Read);
+router.patch('/:MODEL/:ID', Update);
+router.delete('/:MODEL/:ID', Delete);
 
 module.exports = router;
