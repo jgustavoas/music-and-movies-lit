@@ -1,5 +1,5 @@
 const express = require('express');
-const { read } = require('../controllers/Universal');
+const { create, read } = require('../controllers/Universal');
 
 const router = express.Router();
 
@@ -12,6 +12,7 @@ router.get('/', (req, res, next) => {
 });
 
 /* models page */
+router.post('/:MODEL', create);
 router.get('/:MODEL', read);
 
 module.exports = router;
