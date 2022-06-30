@@ -175,7 +175,7 @@ module.exports = {
           updated_at: new Date(),
         },
         {
-          track: 'What Could Be Better?',
+          track: 'What Could Be Better',
           artist_id: 26,
           album_id: 17,
           genre_id: 16,
@@ -184,7 +184,7 @@ module.exports = {
           updated_at: new Date(),
         },
         {
-          track: 'Beaultiful Night',
+          track: 'Beautiful Night',
           artist_id: 26,
           album_id: 17,
           genre_id: 16,
