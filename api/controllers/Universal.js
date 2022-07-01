@@ -1,5 +1,6 @@
 /* eslint-disable class-methods-use-this */
 const models = require('../models');
+const useBy = require('../functions/useBy.func');
 const options = require('../objects/options.obj');
 
 class Controller {
@@ -17,7 +18,10 @@ class Controller {
   async Read(req, res, next) {
     try {
       const { MODEL } = req.params;
-      const data = await models[MODEL].findAll(options[MODEL]);
+      const data = await models[MODEL].findAll({
+        ...options[MODEL],
+        order: useBy(req),
+      });
 
       res.json(data);
     } catch (error) {
