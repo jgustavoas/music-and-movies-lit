@@ -2,6 +2,10 @@ const OPTIONS = require('../objects/options.obj');
 
 /*
   Check wich model has the column indicated by the parameter "req.query.by" to sort the table.
+  
+  Examples: 
+  BASE_URL/albums?by=album
+  BASE_URL/tracks?by=artist&sort=DESC  
 */
 module.exports = function useBy(req) {
   const { MODEL } = req.params;
