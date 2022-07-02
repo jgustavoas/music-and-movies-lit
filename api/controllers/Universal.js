@@ -20,6 +20,7 @@ class Controller {
   async Read(req, res, next) {
     try {
       const { MODEL } = req.params;
+      const { offset, limit } = req.query;
 
       cleanUp(options[MODEL].include);
 
@@ -27,6 +28,8 @@ class Controller {
         ...options[MODEL],
         where: useWhere(req),
         order: useBy(req),
+        offset,
+        limit,
       });
 
       res.json(data);
