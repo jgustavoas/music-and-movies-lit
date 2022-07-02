@@ -21,8 +21,9 @@ class Controller {
     try {
       const { MODEL } = req.params;
       const { offset, limit } = req.query;
+      const { include } = options[MODEL];
 
-      cleanUp(options[MODEL].include);
+      if (include) cleanUp(include);
 
       const data = await models[MODEL].findAll({
         ...options[MODEL],
