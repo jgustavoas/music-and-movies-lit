@@ -1,6 +1,8 @@
 /* eslint-disable class-methods-use-this */
 const models = require('../models');
+const useWhere = require('../functions/useWhere.func');
 const useBy = require('../functions/useBy.func');
+const cleanUp = require('../functions/cleanUp.func');
 const options = require('../objects/options.obj');
 
 class Controller {
@@ -18,13 +20,18 @@ class Controller {
   async Read(req, res, next) {
     try {
       const { MODEL } = req.params;
+
+      cleanUp(options[MODEL].include);
+
       const data = await models[MODEL].findAll({
         ...options[MODEL],
+        where: useWhere(req),
         order: useBy(req),
       });
 
       res.json(data);
     } catch (error) {
+      console.log('error :>> ', error);
       res.status(400).json(error);
     }
   }
