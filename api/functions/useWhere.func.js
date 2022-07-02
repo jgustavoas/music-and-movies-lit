@@ -4,6 +4,20 @@ const Sequelize = require('sequelize');
 const { Op } = Sequelize;
 const OPTIONS = require('../objects/options.obj');
 
+/*   
+  This example brings both Pearl Jam's "Oceans" and Lighthouse Family's "Ocean Drive" tracks
+  BASE_URL/tracks?track=ocean
+  
+  The next one brings the same result as the previous one but sorted by artist in descending order
+  BASE_URL/tracks?by=artist&sort=DESC&track=ocean
+  
+  The following example brings only Pearl Jam's "Oceans"
+  BASE_URL/tracks?by=artist&sort=DESC&track=ocean&artist=jam
+
+  The following example brings only Lighthouse Family's "Ocean Drive"
+  BASE_URL/tracks?by=artist&sort=DESC&track=ocean&artist=fam
+*/
+
 module.exports = (req) => {
   const { MODEL } = req.params;
   const { attributes, include } = OPTIONS[MODEL];
