@@ -8,7 +8,7 @@ module.exports = {
   },
   artists: {
     attributes: ['id', 'artist', 'genre_id', ...defaultColumns],
-    include: { model: models.genres, attributes: ['genre'] },
+    include: [{ model: models.genres, attributes: ['genre'] }],
   },
   albums: {
     attributes: ['id', 'album', 'artist_id', 'genre_id', ...defaultColumns],
