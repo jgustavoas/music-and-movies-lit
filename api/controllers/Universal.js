@@ -1,7 +1,7 @@
 /* eslint-disable class-methods-use-this */
 const models = require('../models');
 const useWhere = require('../functions/useWhere.func');
-const useBy = require('../functions/useBy.func');
+const useOrder = require('../functions/useOrder.func');
 const cleanUp = require('../functions/cleanUp.func');
 const options = require('../objects/options.obj');
 
@@ -28,7 +28,7 @@ class Controller {
       const data = await models[MODEL].findAll({
         ...options[MODEL],
         where: useWhere(req),
-        order: useBy(req),
+        order: useOrder(req),
         offset,
         limit,
       });
