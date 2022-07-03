@@ -4,20 +4,6 @@ const Sequelize = require('sequelize');
 const { Op } = Sequelize;
 const OPTIONS = require('../objects/options.obj');
 
-/*   
-  This example brings both Pearl Jam's "Oceans" and Lighthouse Family's "Ocean Drive" tracks
-  BASE_URL/tracks?track=ocean
-  
-  The next one brings the same result as the previous one but sorted by artist in descending order
-  BASE_URL/tracks?by=artist&sort=DESC&track=ocean
-  
-  The following example brings only Pearl Jam's "Oceans"
-  BASE_URL/tracks?by=artist&sort=DESC&track=ocean&artist=jam
-
-  The following example brings only Lighthouse Family's "Ocean Drive"
-  BASE_URL/tracks?by=artist&sort=DESC&track=ocean&artist=fam
-*/
-
 module.exports = (req) => {
   const { MODEL } = req.params;
   const { attributes, include } = OPTIONS[MODEL];
@@ -48,6 +34,22 @@ module.exports = (req) => {
     [Op.and]: andColumns,
   };
 };
+
+/*   
+  Examples:
+
+  1) This endpoint fetches both Pearl Jam "Oceans" and Lighthouse Family "Ocean Drive" tracks:
+  BASE_URL/tracks?track=ocean
+  
+  2) This one fetches the same as the previous one but sorted by artist in descending order:
+  BASE_URL/tracks?by=artist&sort=DESC&track=ocean
+  
+  3) The following endpoint fetches only Pearl Jam "Oceans":
+  BASE_URL/tracks?track=ocean&artist=jam
+
+  4) This last endpoint fetches only Lighthouse Family "Ocean Drive":
+  BASE_URL/tracks?track=ocean&artist=fam
+*/
 
 /*
     #1 Check about "options.include[].where" and "options.include[].required":
