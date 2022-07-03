@@ -37,3 +37,18 @@ module.exports = {
     attributes: ['id', 'genre_id', ...defaultColumns],
   },
 };
+
+/*
+  "include" is a list of associations to eagerly load using a left join. 
+  
+  Type: Array<object|Model|string>
+  
+  Supported is either { include: [ Model1, Model2, ...]} 
+  or { include: [{ model: Model1, as: 'Alias' }]} 
+  or { include: ['Alias']}. 
+  
+  If your association are set up with an "as" (eg. X.hasMany(Y, { as: 'Z }, 
+  you need to specify Z in the as attribute when eager loading Y).
+
+  https://sequelize.org/api/v6/class/src/model.js~model#static-method-findAll
+*/
