@@ -25,13 +25,12 @@ class Controller {
 
       if (include) cleanUp(include);
 
-      const data = await models[MODEL].findAll({
-        ...options[MODEL],
-        where: useWhere(req),
-        order: useOrder(req),
-        offset,
-        limit,
-      });
+      options[MODEL].where = useWhere(req);
+      options[MODEL].order = useOrder(req);
+      options[MODEL].offset = offset || null;
+      options[MODEL].limit = limit || null;
+
+      const data = await models[MODEL].findAll(options[MODEL]);
 
       res.json(data);
     } catch (error) {
