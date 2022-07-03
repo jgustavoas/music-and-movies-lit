@@ -32,14 +32,16 @@ module.exports = (req) => {
     const found = attributes.find((column) => column === col);
     if (found) andColumns[col] = { [Op.iLike]: `%${val}%` };
 
-    include.forEach((model) => {
-      const foundModel = model.attributes.some((column) => column === col);
+    if (include) {
+      include.forEach((model) => {
+        const foundModel = model.attributes.some((column) => column === col);
 
-      if (foundModel) {
-        model.where = { [col]: { [Op.iLike]: `%${val}%` } }; // #1
-        model.required = true; // #1
-      }
-    });
+        if (foundModel) {
+          model.where = { [col]: { [Op.iLike]: `%${val}%` } }; // #1
+          model.required = true; // #1
+        }
+      });
+    }
   });
 
   return {
