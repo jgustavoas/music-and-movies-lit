@@ -2,7 +2,7 @@ import { LitElement, html, css } from 'lit';
 
 const logo = new URL('../assets/open-wc-logo.svg', import.meta.url).href;
 
-export class AppMm extends LitElement {
+class App extends LitElement {
   static get properties() {
     return {
       title: { type: String },
@@ -65,19 +65,11 @@ export class AppMm extends LitElement {
         <div class="logo"><img alt="open-wc logo" src=${logo} /></div>
         <h1>${this.title}</h1>
 
-        <p>Edit <code>src/AppMm.js</code> and save to reload.</p>
-        <a
-          class="app-link"
-          href="https://open-wc.org/guides/developing-components/code-examples/"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Code examples
-        </a>
+        <p>Edit <code>src/App.js</code> and save to reload.</p>
       </main>
 
       <p class="app-footer">
-        🚽 Made with love by
+        Made with love by
         <a
           target="_blank"
           rel="noopener noreferrer"
@@ -88,3 +80,5 @@ export class AppMm extends LitElement {
     `;
   }
 }
+
+customElements.define('app-mm', App);
