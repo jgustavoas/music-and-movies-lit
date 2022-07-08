@@ -15,25 +15,35 @@ class App extends LitElement {
         flex-direction: column;
         align-items: center;
         justify-content: flex-start;
-        font-size: calc(10px + 2vmin);
+        font-size: 1.5rem;
         color: #1a2b42;
-        max-width: 960px;
         margin: 0 auto;
         text-align: center;
-        background-color: var(--app-mm-background-color);
+      }
+
+      header {
+        background-color: #ededed;
+        width: 100%;
+        height: 64px;
+        display: flex;
+        align-items: center;
+      }
+
+      header h1 {
+        margin-left: 32px;
       }
 
       main {
         flex-grow: 1;
-      }
-
-      .app-footer {
-        font-size: calc(12px + 0.5vmin);
+        display: flex;
         align-items: center;
       }
 
-      .app-footer a {
-        margin-left: 5px;
+      footer {
+        font-size: medium;
+        height: 32px;
+        display: flex;
+        align-items: center;
       }
     `;
   }
@@ -45,14 +55,15 @@ class App extends LitElement {
 
   render() {
     return html`
-      <main>
+      <header>
         <h1>${this.title}</h1>
-      </main>
+      </header>
 
-      <p class="app-footer">
-        App made with
-        <a href="https://lit.dev/" target="_blank">Lit</a>
-      </p>
+      <main>Main content goes here</main>
+
+      <footer>
+        App made with <a href="https://lit.dev/" target="_blank">Lit</a>
+      </footer>
     `;
   }
 }
