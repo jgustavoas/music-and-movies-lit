@@ -31,7 +31,15 @@ class App extends LitElement {
       }
 
       header h1 {
+        margin: 0 0 0 32px;
+      }
+
+      header ul {
+        display: inline-flex;
+        list-style-type: none;
+        gap: 16px;
         margin-left: 32px;
+        padding: 0;
       }
 
       main {
@@ -76,6 +84,13 @@ class App extends LitElement {
     return html`
       <header>
         <h1>${this.title}</h1>
+        <ul>
+          <li>Artists</li>
+          <li>Albums</li>
+          <li>Tracks</li>
+          <li>Movies</li>
+          <li>Genres</li>
+        </ul>
       </header>
 
       <main>
@@ -86,7 +101,7 @@ class App extends LitElement {
       </main>
 
       <footer>
-        App made with <a href="https://lit.dev/" target="_blank">Lit</a>
+        App made with&nbsp;<a href="https://lit.dev/" target="_blank">Lit</a>
       </footer>
     `;
   }
