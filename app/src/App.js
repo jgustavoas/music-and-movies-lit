@@ -4,6 +4,7 @@ class App extends LitElement {
   static get properties() {
     return {
       title: { type: String },
+      rows: { type: Object },
     };
   }
 
@@ -36,7 +37,9 @@ class App extends LitElement {
       main {
         flex-grow: 1;
         display: flex;
+        flex-direction: column;
         align-items: center;
+        justify-content: center;
       }
 
       footer {
@@ -51,6 +54,22 @@ class App extends LitElement {
   constructor() {
     super();
     this.title = 'Music and Movies';
+    this.rows = [];
+  }
+
+  async connectedCallback() {
+    super.connectedCallback();
+
+    const rows = await fetch('http://localhost:3000/artists?by=artist')
+      .then(response => response.json())
+      .then(data => data);
+
+    this.rows = rows.map(
+      column =>
+        html`<tr>
+          ${column.artist}
+        </tr>`
+    );
   }
 
   render() {
@@ -59,7 +78,12 @@ class App extends LitElement {
         <h1>${this.title}</h1>
       </header>
 
-      <main>Main content goes here</main>
+      <main>
+        <h2>Artists</h2>
+        <table>
+          ${this.rows}
+        </table>
+      </main>
 
       <footer>
         App made with <a href="https://lit.dev/" target="_blank">Lit</a>
