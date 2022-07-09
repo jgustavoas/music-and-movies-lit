@@ -12,6 +12,7 @@ class App extends LitElement {
     return css`
       :host {
         min-height: 100vh;
+        width: 1280px;
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -19,16 +20,16 @@ class App extends LitElement {
         font-size: 1.5rem;
         color: #1a2b42;
         margin: 0 auto;
+        padding: 16px 0;
         text-align: center;
         gap: 16px;
       }
 
       header {
-        background-color: #ededed;
         width: 100%;
         height: 64px;
         display: flex;
-        align-items: center;
+        align-items: baseline;
       }
 
       header h1 {
