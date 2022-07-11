@@ -28,10 +28,12 @@ class App extends LitElement {
 
     this.rows = rows.map(
       column =>
-        html`<tr>
-          <td>${column.artist}</td>
-          <td>Edit | Delete</td>
-        </tr>`
+        html`
+          <tr>
+            <td>${column.artist}</td>
+            <td>Edit | Delete</td>
+          </tr>
+        `
     );
   }
 
