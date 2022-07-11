@@ -4,7 +4,7 @@ import appStyle from './styles/app.style';
 class App extends LitElement {
   static get properties() {
     return {
-      title: { type: String },
+      tableName: { type: String },
       rows: { type: Object },
     };
   }
@@ -15,7 +15,7 @@ class App extends LitElement {
 
   constructor() {
     super();
-    this.title = 'Music and Movies';
+    this.tableName = 'Artists';
     this.rows = [];
   }
 
@@ -38,7 +38,7 @@ class App extends LitElement {
   render() {
     return html`
       <header>
-        <h1>${this.title}</h1>
+        <h1>Music and Movies</h1>
         <ul>
           <li>Artists</li>
           <li>Albums</li>
@@ -50,7 +50,7 @@ class App extends LitElement {
 
       <main>
         <div>
-          <h2>Artists</h2>
+          <h2>${this.tableName}</h2>
           <button>New artist</button>
         </div>
 
