@@ -41,13 +41,13 @@ class App extends LitElement {
     return html`
       <header>
         <h1>Music and Movies</h1>
-        <ul>
-          <li>Artists</li>
-          <li>Albums</li>
-          <li>Tracks</li>
-          <li>Movies</li>
-          <li>Genres</li>
-        </ul>
+        <nav>
+          <button>Artists</button>
+          <button>Albums</button>
+          <button>Tracks</button>
+          <button>Movies</button>
+          <button>Genres</button>
+        </nav>
       </header>
 
       <main>

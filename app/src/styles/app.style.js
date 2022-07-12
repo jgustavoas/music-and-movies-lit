@@ -27,9 +27,8 @@ export default css`
     margin: 0 0 0 32px;
   }
 
-  header ul {
+  nav {
     display: inline-flex;
-    list-style-type: none;
     gap: 16px;
     margin-left: 32px;
     padding: 0;
