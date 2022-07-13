@@ -36,6 +36,13 @@ export default css`
     flex: 1;
   }
 
+  aside {
+    display: flex;
+  }
+  aside select {
+    margin-right: 8px;
+  }
+
   main {
     width: 100%;
     flex-grow: 1;
