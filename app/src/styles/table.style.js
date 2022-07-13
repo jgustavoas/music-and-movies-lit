@@ -2,7 +2,7 @@ import { css } from 'lit';
 
 export default css`
   table {
-    width: calc(100% - 64px);
+    width: 100%;
     text-align: left;
     border: 1px solid #999;
     border-collapse: collapse;

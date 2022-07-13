@@ -25,7 +25,7 @@ export default css`
   }
 
   header h1 {
-    margin: 0 0 0 32px;
+    margin: 0;
   }
 
   nav {
@@ -33,6 +33,7 @@ export default css`
     gap: 16px;
     margin-left: 32px;
     padding: 0;
+    flex: 1;
   }
 
   main {
@@ -47,7 +48,7 @@ export default css`
 
   main h2 {
     font-size: 32px;
-    margin: 16px 0 16px 32px;
+    margin: 16px 0;
   }
 
   main button {
@@ -59,10 +60,6 @@ export default css`
     display: flex;
     align-items: center;
     justify-content: space-between;
-  }
-
-  main div button {
-    margin-right: 32px;
   }
 
   ${tableStyle}
