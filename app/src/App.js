@@ -1,11 +1,12 @@
 import { LitElement, html } from 'lit';
 import appStyle from './styles/app.style';
+import tableTemplate from './templates/table.template';
 
 class App extends LitElement {
   static get properties() {
     return {
       tableName: { type: String },
-      rows: { type: Object },
+      data: { type: Object },
     };
   }
 
@@ -16,25 +17,15 @@ class App extends LitElement {
   constructor() {
     super();
     this.tableName = 'Artists';
-    this.rows = [];
+    this.data = null;
   }
 
   async connectedCallback() {
     super.connectedCallback();
 
-    const rows = await fetch('http://localhost:3000/artists?by=artist')
+    this.data = await fetch('http://localhost:3000/artists?by=artist')
       .then(response => response.json())
       .then(data => data);
-
-    this.rows = rows.map(
-      column =>
-        html`
-          <tr>
-            <td>${column.artist}</td>
-            <td>Edit | Delete</td>
-          </tr>
-        `
-    );
   }
 
   render() {
@@ -56,17 +47,7 @@ class App extends LitElement {
           <button>New artist</button>
         </div>
 
-        <table>
-          <thead>
-            <tr>
-              <th>Name</th>
-              <th>Options</th>
-            </tr>
-          </thead>
-          <tbody>
-            ${this.rows}
-          </tbody>
-        </table>
+        ${tableTemplate(this.data)}
       </main>
 
       <footer>
