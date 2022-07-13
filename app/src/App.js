@@ -32,6 +32,7 @@ class App extends LitElement {
     return html`
       <header>
         <h1>Music and Movies</h1>
+
         <nav>
           <button>Artists</button>
           <button>Albums</button>
@@ -39,6 +40,18 @@ class App extends LitElement {
           <button>Movies</button>
           <button>Genres</button>
         </nav>
+
+        <aside>
+          <input type="text" name="" id="" />
+          <select>
+            <option value="">Artist</option>
+            <option value="">Album</option>
+            <option value="">Track</option>
+            <option value="">Movie</option>
+            <option value="">Genre</option>
+          </select>
+          <button>Search</button>
+        </aside>
       </header>
 
       <main>
