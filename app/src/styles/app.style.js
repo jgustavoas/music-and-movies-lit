@@ -1,4 +1,5 @@
 import { css } from 'lit';
+import tableStyle from './table.style';
 
 export default css`
   :host {
@@ -64,23 +65,7 @@ export default css`
     margin-right: 32px;
   }
 
-  table {
-    width: calc(100% - 64px);
-    text-align: left;
-    border: 1px solid #999;
-    border-collapse: collapse;
-  }
-
-  th,
-  td {
-    border: 1px solid #999;
-    padding: 8px;
-  }
-
-  th:last-of-type,
-  td:last-of-type {
-    text-align: center;
-  }
+  ${tableStyle}
 
   footer {
     font-size: medium;
