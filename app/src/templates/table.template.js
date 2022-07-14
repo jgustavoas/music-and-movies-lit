@@ -2,6 +2,7 @@ import { html } from 'lit';
 
 export default data => {
   if (!data) return null;
+  if (data.length === 0) return html`<h2>Sorry! Nothing was found :(</h2>`;
 
   const rows = data.map(
     column =>
