@@ -1,12 +1,14 @@
 import { LitElement, html } from 'lit';
 import appStyle from './styles/app.style';
-import tableTemplate from './templates/table.template';
+import contentTemplate from './templates/content.template';
 
 class App extends LitElement {
   static get properties() {
     return {
+      screen: { type: String },
       tableName: { type: String },
       data: { type: Object },
+      content: { type: Object },
     };
   }
 
@@ -16,8 +18,10 @@ class App extends LitElement {
 
   constructor() {
     super();
+    this.screen = 'Home';
     this.tableName = 'Artists';
     this.data = null;
+    this.content = null;
   }
 
   async connectedCallback() {
@@ -54,14 +58,7 @@ class App extends LitElement {
         </aside>
       </header>
 
-      <main>
-        <div>
-          <h2>${this.tableName}</h2>
-          <button>New artist</button>
-        </div>
-
-        ${tableTemplate(this.data)}
-      </main>
+      <main>${contentTemplate(this.tableName, this.data)}</main>
 
       <footer>
         App made with&nbsp;<a href="https://lit.dev/" target="_blank">Lit</a>
