@@ -11,8 +11,9 @@ export default css`
     justify-content: flex-start;
     font-size: 1.5rem;
     color: #1a2b42;
+    background-color: #fff;
     margin: 0 auto;
-    padding: 16px 0;
+    padding: 0 16px;
     text-align: center;
     gap: 16px;
   }
@@ -21,7 +22,7 @@ export default css`
     width: 100%;
     height: 64px;
     display: flex;
-    align-items: baseline;
+    align-items: flex-end;
   }
 
   header h1 {
