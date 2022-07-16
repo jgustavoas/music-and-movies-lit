@@ -1,5 +1,6 @@
 import { html } from 'lit';
 import tableTemplate from './table.template';
+import button from './button.template';
 
 export default (table, data) => {
   if (!table) {
@@ -12,8 +13,9 @@ export default (table, data) => {
   return html`
     <div>
       <h2>${table}</h2>
-      <button>New artist</button>
+      ${button('New artist')}
     </div>
+
     ${tableTemplate(data)}
   `;
 };

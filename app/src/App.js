@@ -1,6 +1,7 @@
 import { LitElement, html } from 'lit';
 import appStyle from './styles/app.style';
 import contentTemplate from './templates/content.template';
+import button from './templates/button.template';
 
 class App extends LitElement {
   static get properties() {
@@ -9,6 +10,7 @@ class App extends LitElement {
       tableName: { type: String },
       data: { type: Object },
       content: { type: Object },
+      navButtons: { type: Object },
     };
   }
 
@@ -22,10 +24,14 @@ class App extends LitElement {
     this.tableName = 'Artists';
     this.data = null;
     this.content = null;
+    this.navButtons = [];
   }
 
   async connectedCallback() {
     super.connectedCallback();
+
+    const tables = ['Artists', 'Albums', 'Tracks', 'Movies', 'Genres'];
+    this.navButtons = tables.map(table => button(table));
 
     this.data = await fetch('http://localhost:3000/artists?by=artist')
       .then(response => response.json())
@@ -37,13 +43,7 @@ class App extends LitElement {
       <header>
         <h1>Music and Movies</h1>
 
-        <nav>
-          <button>Artists</button>
-          <button>Albums</button>
-          <button>Tracks</button>
-          <button>Movies</button>
-          <button>Genres</button>
-        </nav>
+        <nav>${this.navButtons}</nav>
 
         <aside>
           <input type="text" name="" id="" />
@@ -54,7 +54,8 @@ class App extends LitElement {
             <option value="">Movie</option>
             <option value="">Genre</option>
           </select>
-          <button>Search</button>
+
+          ${button('Search')}
         </aside>
       </header>
 
