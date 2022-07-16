@@ -2,6 +2,7 @@ import { LitElement, html } from 'lit';
 import appStyle from './styles/app.style';
 import contentTemplate from './templates/content.template';
 import button from './templates/button.template';
+import models from './objects/models.obj';
 
 class App extends LitElement {
   static get properties() {
@@ -24,14 +25,11 @@ class App extends LitElement {
     this.tableName = 'Artists';
     this.data = null;
     this.content = null;
-    this.navButtons = [];
+    this.navButtons = models.map(model => button(model));
   }
 
   async connectedCallback() {
     super.connectedCallback();
-
-    const tables = ['Artists', 'Albums', 'Tracks', 'Movies', 'Genres'];
-    this.navButtons = tables.map(table => button(table));
 
     this.data = await fetch('http://localhost:3000/artists?by=artist')
       .then(response => response.json())
