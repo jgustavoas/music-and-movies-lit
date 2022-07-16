@@ -2,7 +2,7 @@ import { LitElement, html } from 'lit';
 import appStyle from './styles/app.style';
 import contentTemplate from './templates/content.template';
 import button from './templates/button.template';
-import models from './objects/models.obj';
+import screens from './objects/screens.obj';
 
 class App extends LitElement {
   static get properties() {
@@ -22,10 +22,9 @@ class App extends LitElement {
   constructor() {
     super();
     this.screen = 'Home';
-    this.tableName = 'Artists';
     this.data = null;
     this.content = null;
-    this.navButtons = models.map(model => button(model));
+    this.navButtons = screens.map(model => button(model));
   }
 
   async connectedCallback() {
@@ -57,7 +56,7 @@ class App extends LitElement {
         </aside>
       </header>
 
-      <main>${contentTemplate(this.tableName, this.data)}</main>
+      <main>${contentTemplate(this.screen, this.data)}</main>
 
       <footer>
         App made with&nbsp;<a href="https://lit.dev/" target="_blank">Lit</a>
