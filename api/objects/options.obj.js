@@ -34,7 +34,7 @@ module.exports = {
     ],
   },
   movies: {
-    attributes: ['id', 'genre_id', ...defaultColumns],
+    attributes: ['id', 'movie', 'genre_id', ...defaultColumns],
   },
 };
 
