@@ -14,7 +14,8 @@ module.exports = (req) => {
 
   if (!by) return null;
 
-  OPTIONS[MODEL].include.forEach((inc) => {
+  OPTIONS[MODEL].include?.forEach((inc) => {
+    console.log('inc.attributes :>> ', inc.attributes);
     if (inc.attributes.includes(by)) order.splice(0, 0, inc);
   });
 
