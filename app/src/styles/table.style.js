@@ -12,10 +12,6 @@ export default css`
   td {
     border: 1px solid #999;
     padding: 8px;
-  }
-
-  th:last-of-type,
-  td:last-of-type {
-    text-align: center;
+    text-transform: capitalize;
   }
 `;
