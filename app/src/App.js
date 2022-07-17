@@ -3,12 +3,12 @@ import appStyle from './styles/app.style';
 import contentTemplate from './templates/content.template';
 import button from './templates/button.template';
 import screens from './objects/screens.obj';
+import { navigate } from './functions/button.func';
 
 class App extends LitElement {
   static get properties() {
     return {
       screen: { type: String },
-      tableName: { type: String },
       data: { type: Object },
       content: { type: Object },
       navButtons: { type: Object },
@@ -24,21 +24,17 @@ class App extends LitElement {
     this.screen = 'Home';
     this.data = null;
     this.content = null;
-    this.navButtons = screens.map(model => button(model));
+    this.navButtons = screens.map(screen => button(screen, navigate));
   }
 
   async connectedCallback() {
     super.connectedCallback();
-
-    this.data = await fetch('http://localhost:3000/artists?by=artist')
-      .then(response => response.json())
-      .then(data => data);
   }
 
   render() {
     return html`
       <header>
-        <h1>Music and Movies</h1>
+        <button id="btn_Home" @click=${navigate}>Music and Movies</button>
 
         <nav>${this.navButtons}</nav>
 

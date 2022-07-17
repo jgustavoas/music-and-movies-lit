@@ -1,3 +1,4 @@
 import { html } from 'lit';
 
-export default text => html` <button>${text}</button> `;
+export default (text, evClick) =>
+  html` <button id="btn_${text}" @click=${evClick}>${text}</button> `;

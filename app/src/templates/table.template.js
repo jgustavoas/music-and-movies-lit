@@ -1,6 +1,6 @@
 import { html } from 'lit';
 
-export default data => {
+export default (screen, data) => {
   if (!data) return null;
   if (data.length === 0) return html`<h2>Sorry! Nothing was found :(</h2>`;
 
@@ -8,7 +8,7 @@ export default data => {
     column =>
       html`
         <tr>
-          <td>${column.artist}</td>
+          <td>${column[screen.slice(0, -1).toLowerCase()]}</td>
           <td>Edit | Delete</td>
         </tr>
       `

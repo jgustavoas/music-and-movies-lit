@@ -16,6 +16,6 @@ export default (screen, data) => {
       ${button(`New ${screen.slice(0, -1).toLowerCase()}`)}
     </div>
 
-    ${tableTemplate(data)}
+    ${tableTemplate(screen, data)}
   `;
 };
