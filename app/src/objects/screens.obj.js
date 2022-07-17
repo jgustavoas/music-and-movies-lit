@@ -22,5 +22,6 @@ export default [
   {
     screen: 'Genres',
     table: 'genre',
+    associations: [],
   },
 ];
