@@ -1,38 +1,46 @@
 import { html } from 'lit';
 import screensObj from '../objects/screens.obj';
 
+function tdTemplate(columns, th) {
+  const template = columns.map(col =>
+    th ? html`<th>${col}</th>` : html`<td>${col}</td>`
+  );
+
+  return template;
+}
+
+function trTemplate(data, columns) {
+  const template = data.map(row => {
+    const tds = columns.map(
+      (column, i) => (i === 0 ? row[column] : row[column][column]) // 1
+    );
+
+    return html`
+      <tr>
+        ${tdTemplate(tds)}
+      </tr>
+    `;
+  });
+
+  return template;
+}
+
 export default (screen, data) => {
   if (!data) return null;
   if (data.length === 0) return html`<h2>Sorry! Nothing was found :(</h2>`;
 
   const model = screensObj.find(obj => obj.screen === screen);
-  const mainColumn = screen.slice(0, -1).toLowerCase();
-  const columns = [mainColumn, ...model.associations];
-
-  const tr = data.map(row => {
-    const associatedColumns = model.associations.map(
-      column => html`<td>${row[column][column]}</td>` // 1
-    );
-
-    return html`
-      <tr>
-        <td>${row[mainColumn]}</td>
-        ${associatedColumns}
-        <td>Edit | Delete</td>
-      </tr>
-    `;
-  });
+  const { columns } = model;
 
   return html`
     <table>
       <thead>
         <tr>
-          ${columns.map(column => html`<th>${column}</th>`)}
-          <th>Actions</th>
+          ${tdTemplate(columns, true)}
         </tr>
       </thead>
       <tbody>
-        ${tr}
+        ${trTemplate(data, columns)}
       </tbody>
     </table>
   `;
