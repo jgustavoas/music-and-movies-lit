@@ -24,7 +24,7 @@ class App extends LitElement {
     this.screen = 'Home';
     this.data = null;
     this.content = null;
-    this.navButtons = screens.map(screen => button(screen, navigate));
+    this.navButtons = screens.map(screen => button(screen.screen, navigate));
   }
 
   async connectedCallback() {
