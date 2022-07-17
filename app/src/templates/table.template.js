@@ -11,13 +11,13 @@ function tdTemplate(columns, th) {
 
 function trTemplate(data, columns) {
   const template = data.map(row => {
-    const tds = columns.map(
+    const cols = columns.map(
       (column, i) => (i === 0 ? row[column] : row[column][column]) // 1
     );
 
     return html`
       <tr>
-        ${tdTemplate(tds)}
+        ${tdTemplate(cols)}
       </tr>
     `;
   });
