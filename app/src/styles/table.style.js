@@ -14,4 +14,8 @@ export default css`
     padding: 8px;
     text-transform: capitalize;
   }
+
+  th button {
+    float: right;
+  }
 `;
