@@ -2,13 +2,13 @@ import { html } from 'lit';
 import screensObj from '../objects/screens.obj';
 
 function tdTemplate(columns, th) {
-  const sortButtons = html`
-    <button title="Sort ascending">▴</button>
-    <button title="Sort descending">▾</button>
+  const sortButtons = col => html`
+    <button id="btn_sort-desc" title="Sort ${col} descending">▾</button>
+    <button id="btn_sort-asc" title="Sort ${col} ascending">▴</button>
   `;
 
   const template = columns.map(col =>
-    th ? html`<th>${col} ${sortButtons}</th>` : html`<td>${col}</td>`
+    th ? html`<th>${col} ${sortButtons(col)}</th>` : html`<td>${col}</td>`
   );
 
   return template;
