@@ -1,12 +1,8 @@
 import { html } from 'lit';
+import { sortButtons } from './button.template';
 import screensObj from '../objects/screens.obj';
 
 function tdTemplate(columns, th) {
-  const sortButtons = col => html`
-    <button id="btn_sort-desc" title="Sort ${col} descending">▾</button>
-    <button id="btn_sort-asc" title="Sort ${col} ascending">▴</button>
-  `;
-
   const template = columns.map(col =>
     th ? html`<th>${col} ${sortButtons(col)}</th>` : html`<td>${col}</td>`
   );
