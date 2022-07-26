@@ -1,6 +1,6 @@
 {
   "development": {
-    "port": 5434,
+    "port": 5432,
     "username": "postgres",
     "password": "docker",
     "database": "music_and_movies_dev",
@@ -9,7 +9,7 @@
     "seederStorage": "sequelize"
   },
   "test": {
-    "port": 5434,
+    "port": 5432,
     "username": "postgres",
     "password": "docker",
     "database": "music_and_movies_test",
@@ -18,7 +18,7 @@
     "seederStorage": "sequelize"
   },
   "production": {
-    "port": 5434,
+    "port": 5432,
     "username": "postgres",
     "password": "docker",
     "database": "music_and_movies_pro",
